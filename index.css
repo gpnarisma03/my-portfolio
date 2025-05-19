@@ -166,6 +166,14 @@ body {
     color: var(--text-color);
     font-size: 14px;
 }
+.card-text .colored {
+    font-size: 22px;          /* Icon size */
+    vertical-align: middle;   /* Align icons vertically with text */
+    margin-right: 8px;        /* Space between icons */
+    color: #3178c6;           /* Optional: adjust color to match your theme */
+}
+
+
 
 .card-title a {
     text-decoration: none;
@@ -179,6 +187,10 @@ body {
     width: 100%;
 }
 
+.tech-stack {
+  font-size: 130px;
+  font-weight: 500;
+}
 
 /* TOOLS */
 #tools h3 {
