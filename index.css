@@ -211,6 +211,12 @@ body {
   font-size: 130px;
   font-weight: 500;
 }
+.project-status {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 /* TOOLS */
 #tools h3 {
