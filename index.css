@@ -218,6 +218,19 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.icon-links a {
+    margin-top: 15px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background-color: #f0f4f8;
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
 /* TOOLS */
 #tools h3 {
     color: var(--primary);
