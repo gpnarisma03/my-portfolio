@@ -83,7 +83,7 @@ document
       formMessage.innerHTML = '<div class="text-center">Sending... </div>';
 
       const response = await fetch(
-        "https://myportfolio-api-877i.onrender.com/message",
+        "https://portfolioapi-r33f.onrender.com/message",
         {
           method: "POST",
           headers: {
