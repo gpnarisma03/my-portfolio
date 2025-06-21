@@ -78,11 +78,13 @@ body {
 }
 
 #description {
-  color: var(--text-color);
-  line-height: 1.6;
-  letter-spacing: 0.5px;
-  text-align: left;
-  margin: 0 auto;
+  color: var(--text-color); /* Keeps it consistent with your theme */
+  font-size: 1rem; /* Standard size for body text */
+  line-height: 1.75; /* More breathing room for readability */
+  letter-spacing: 0.5px; /* Subtle spacing, easier on the eyes */
+  text-align: left; /* Keep it aligned for better scanning */
+  max-width: 700px; /* Limit line length for readability */
+  margin: 0 auto; /* Center it horizontally */
 }
 
 #landing-img {
@@ -199,10 +201,25 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.tools-tech-stack {
-  font-size: 130px;
-  font-weight: 500;
+.icon-box {
+  width: 33.33%;
+  text-align: center;
+  padding: 10px 0;
 }
+
+.tools-tech-stack {
+  font-size: 80px;
+  font-weight: 500;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.tools-tech-stack:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+  color: #007bff;
+}
+
 .project-status {
   font-size: 12px;
   padding: 4px 8px;
@@ -280,6 +297,29 @@ body {
   font-weight: bold;
   transition: color 0.3s ease;
 }
+.mobile-nav-bar {
+  background-color: #fff;
+  width: 100%;
+  max-width: 100%;
+  z-index: 1050;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #eaeaea;
+}
+
+.mobile-nav-bar .nav-link {
+  color: var(--text-color);
+  font-size: 12px;
+  text-align: center;
+}
+
+.mobile-nav-bar .nav-link:hover,
+.mobile-nav-bar .nav-link:focus {
+  color: var(--primary);
+}
+
+.mobile-nav-bar .nav-link i {
+  margin-bottom: 2px;
+}
 
 /* Additional Mobile screen */
 
@@ -306,5 +346,26 @@ body {
 
   .tech-img {
     height: 50px;
+  }
+
+  #landing-img {
+    width: 250px;
+    height: 250px;
+  }
+
+  #name {
+    font-size: 2rem;
+  }
+  #title {
+    font-size: 1.2rem;
+  }
+
+  #description {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  body {
+    margin-top: auto;
   }
 }

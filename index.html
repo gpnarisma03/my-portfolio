@@ -1,389 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            
-            <!-- Favicon -->
-            <link rel="icon" type="image/x-icon" href="images/pogie.jpg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-            <!-- Title -->
-            <title>Gerald Narisma</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/pogie.jpg" />
 
-            <!-- Google Fonts -->
-            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- Title -->
+    <title>Gerald Narisma</title>
 
-            <!-- Icons -->
-            <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
-            <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-            <!-- Bootstrap CSS  -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-            <!-- Custom CSS  -->
-            <link rel="stylesheet" type="text/css" href="./index.css"> 
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <!-- Bootstrap CSS  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
 
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-        </head>
-        <body>
+    <!-- Custom CSS  -->
+    <link rel="stylesheet" type="text/css" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+    />
 
-        <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar" id="navbar">
-            <div class="container-fluid">
-              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav text-center gap-3">
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#landing">HOME</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#projects">MY PROJECTS</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#tools">TOOLS</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#contact">CONTACT</a>
-                  </li>
-                </ul>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+  </head>
+  <body>
+    <!-- Desktop Navigation -->
+    <nav class="navbar fixed-top custom-navbar d-none d-lg-block" id="navbar">
+      <div class="container-fluid justify-content-center">
+        <ul class="navbar-nav d-flex flex-row gap-4 text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#landing">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">MY PROJECTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tools">TOOLS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Landing Section Start here -->
+      <section id="landing">
+        <div class="container mt-5">
+          <div class="row align-items-center text-center text-md-start">
+            <div
+              class="col-12 col-md-6 order-md-1 order-2 px-4 px-md-5"
+              data-aos="fade-right"
+            >
+              <h1 id="name" class="mb-3 mt-3">Gerald Narisma</h1>
+              <h2 id="title" class="mb-4">Full Stack Web Developer</h2>
+              <p id="description" class="mb-4">
+                Driven career transitioner specializing in crafting dynamic and
+                scalable web systems, with extensive expertise in both front-end
+                and back-end development. Passionate about creating intuitive
+                user experiences, optimizing performance, and implementing
+                efficient database solutions. Adept at leveraging modern
+                technologies to build secure, responsive, and high-performing
+                applications.
+              </p>
+
+              <div
+                class="btn-box d-flex justify-content-center justify-content-md-start"
+              >
+                <a
+                  href="#contact"
+                  class="text-decoration-none d-block d-md-inline me-md-3 mb-3 mb-md-0 p-1 px-2 p-md-2 px-md-3"
+                >
+                  <button class="btn btn-1">get in touch</button>
+                </a>
+                <a
+                  href="./assets/My_Resume _Gerald_Narisma.pdf"
+                  target="_blank"
+                  class="text-decoration-none d-block d-md-inline p-1 px-2 p-md-2 px-md-3"
+                >
+                  <button class="btn btn-2">my resume</button>
+                </a>
               </div>
             </div>
-          </nav>
-          <main>
-
-            <!-- Landing Section Start here -->
-            <section id="landing">
-                <div class="container mt-5">
-                  <div class="row align-items-center text-center text-md-start">
-                      <div class="col-12 col-md-6 order-md-1 order-2 px-4 px-md-5" data-aos="fade-right">
-                        <h1 id="name" class="mb-3 mt-3">Gerald Narisma</h1>
-                        <h2 id="title" class="mb-4">Full Stack Web Developer</h2>
-                        <p id="description" class="mb-4">
-                            Driven career transitioner specializing in crafting dynamic and scalable web systems, with extensive expertise in both front-end and back-end development. Passionate about creating intuitive user experiences, optimizing performance, and implementing efficient database solutions. Adept at leveraging modern technologies to build secure, responsive, and high-performing applications.
-                        </p>
-                       
-                        <div class="btn-box d-flex justify-content-start">
-
-                        <a href="#contact" class="text-decoration-none d-block d-md-inline me-md-3 mb-3 mb-md-0 p-1 px-2 p-md-2 px-md-3">
-                            <button class="btn btn-1">get in touch</button>
-                      </a>
-                      <a href="./assets/My_Resume _Gerald_Narisma.pdf" target="_blank" class="text-decoration-none d-block d-md-inline p-1 px-2 p-md-2 px-md-3">
-                        <button class="btn btn-2">my resume</button>
-                      </a>
-                    </div>
-                      </div>
-                      <div class="col-12 col-md-6 order-md-2 order-1 text-center" data-aos="fade-left">
-                          <img src="images/pogie.jpg" class="rounded-circle img-fluid" id="landing-img" alt="Gerald Narisma" width="400">
-                      </div>
-                  </div>
-              </div>
-              </section>
-              <section id="projects" data-aos="fade-down">
-                <div class="container mt-5">
-                    <h2 class="text-center">PROJECTS</h2>
-                    <div class="row my-5">
-                        <!-- Tunai Basketball League -->
-                        <div class="col-12 col-md-6 col-lg-4 my-2">
-                            <div class="card h-100 p-3 shadow-sm">
-<span class="project-status badge bg-success position-absolute top-0 start-0 m-2">
-    Redesign in Progress
-</span>
-
-                                <img src="./images/tunaibasketballleague.jpg" class="project-image card-img-top img-fluid w-100 mb-3" alt="Tunai Basketball League">
-                                <div class="card-body">
-                                    <h5 class="card-title">TUNAI Basketball League - TBL Website
-                                    </h5>
-                                    <p class="card-text">The Tunai Basketball League project is a web application designed to manage and showcase basketball league data.</p>
-                                    <div class="tech-stack">
-                                        <span>HTML</span>
-                                        <span>CSS</span>
-                                        <span>Bootstrap</span>
-                                        <span>JQuery</span>
-                                        <span>PHP</span>
-                                        <span>MySQL</span>
-                                    </div>
-                                       <div class="icon-links d-flex justify-content-between">
-                                        <a href="https://tunaibasketballleague.com/" target="_blank" class="ms-2">
-                                           Live Demo <i class="ri-external-link-line"></i>
-                                        </a>
-                                       </div>
-                                </div>
-                            </div>
-                        </div> 
-                        <div class="col-12 col-md-6 col-lg-4 my-2">
-                            <div class="card h-100 p-3 shadow-sm">
-                                <img src="./images/ecommerce-image.png" class="project-image img-fluid w-100 mb-3" alt="E-Commerce Documentation">
-                                <div class="card-body">
-                                    <h5 class="card-title">E-Commerce API Documentation
-                                    </h5>
-                                    <p class="card-text p-1">Dynamic E-Commerce Workflow Management with order processing, real-time inventory updates, and secure authentication.</p>
-                                    <div class="tech-stack">
-                                        <span>Node JS</span>
-                                        <span>Express JS</span>
-                                        <span>MongoDB</span>
-                                        <span>Postman</span>
-                                    </div>
-                                    <div class="icon-links d-flex justify-content-between">
-
-                                        <a href="https://documenter.getpostman.com/view/43520837/2sB2ca7f8k" target="_blank" class="ms-2">
-                                            Live Demo <i class="ri-external-link-line"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                                         
-                        <div class="col-12 col-md-6 col-lg-4 my-2">
-                            <div class="card h-100 p-3 shadow-sm">
-                                <img src="./images/nextGen.png" class="project-image img-fluid w-100 mb-3" alt="Project Image 4">
-                                <div class="card-body">
-                                    <h5 class="card-title">E-Commerce App
-
-                                    </h5>
-                                    <p class="card-text">MERN E-Commerce Platform with real-time search, secure checkout, and an admin dashboard.</p>
-                                    <div class="tech-stack">
-                                        <span>HTML</span>
-                                        <span>CSS</span>
-                                        <span>Bootstrap</span>
-                                        <span>React</span>
-                                        <span>Node JS</span>
-                                        <span>Express JS</span>
-                                        <span>MongoDB</span>
-                                    </div>
-                                    <div class="icon-links d-flex justify-content-between">
-                                        <a href="https://next-gen-eshop.vercel.app/" target="_blank" class="ms-2">
-                                           Live Demo <i class="ri-external-link-line"></i>
-                                        </a>
-                                     <a href="https://github.com/gpnarisma03/nextGen-Eshop" target="_blank" class="ms-2" title="View Code on GitHub">
-                                                <i class="ri-github-line"></i> Code
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            
-                        <div class="col-12 col-md-6 col-lg-4 my-2">
-                            <div class="card h-100 p-3 shadow-sm">
-                                <img src="./images/supablog.png" class="project-image img-fluid w-100 mb-3" alt="Project Image 5">
-                                <div class="card-body">
-                                    <h5 class="card-title">SupaBlog App
-                                    </h5>
-                                        <p class="card-text">
-                                        A full-stack blog app with user login, blog posting, and commenting features. Built with modern web technologies and fully responsive.
-                                        </p>
-                                    <p class="card-text">
-                                    <div class="tech-stack">
-                                        <span>HTML</span>
-                                        <span>CSS</span>
-                                        <span>Bootstrap</span>
-                                        <span>React</span>
-                                        <span>Node JS</span>
-                                        <span>Express JS</span>
-                                        <span>MongoDB</span>
-                                    </div>
-                                     <div class="icon-links d-flex justify-content-between">
-                                       <a href="https://supablog-app-bice.vercel.app/" target="_blank" class="ms-2">
-                                           Live Demo <i class="ri-external-link-line"></i>
-                                        </a>
-                                   <a href="https://github.com/gpnarisma03/Blog-App" target="_blank" class="ms-2" title="View Code on GitHub">
-                                                <i class="ri-github-line"></i> Code
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-            
-                        <div class="col-12 col-md-6 col-lg-4 my-2">
-                            <div class="card h-100 p-3 shadow-sm position-relative">
-                                <span class="project-status badge bg-success position-absolute top-0 start-0 m-2">
-                                    Ongoing Project
-                                </span>
-
-                                <img src="./images/project6.png" class="project-image img-fluid w-100 mb-3" alt="AerLink Airline Booking App">
-                                
-                                <div class="card-body">
-                                    <h5 class="card-title">AeroLink – Airline Booking App
-                                    </h5>
-                                    <p class="card-text">
-                                        A sleek and user-friendly airline booking app that allows travelers to search flights, choose seats, and confirm bookings with ease.
-                                    </p>
-                                    <div class="tech-stack">
-                                        <span>Figma</span>
-                                        <span>HTML</span>
-                                        <span>CSS</span>
-                                        <span>Bootstrap</span>
-                                        <span>React</span>
-                                        <span>Node JS</span>
-                                        <span>Express JS</span>
-                                        <span>MongoDB</span>
-                                    </div>
-                               <div class="icon-links d-flex justify-content-between">
-                                              <a href="https://gpnarisma03.github.io/aeroLink-app/" target="_blank" class="ms-2">
-                                           Live Demo <i class="ri-external-link-line"></i>
-                                        </a>
-                                   <a href="https://github.com/gpnarisma03/aeroLink-app" target="_blank" class="ms-2" title="View Code on GitHub">
-                                                <i class="ri-github-line"></i> Code
-                                        </a>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                                            <div class="col-12 col-md-6 col-lg-4 my-2">
-                            <div class="card h-100 p-3 shadow-sm position-relative">
-                                <span class="project-status badge bg-success position-absolute top-0 start-0 m-2">
-                                    Ongoing Project
-                                </span>
-
-                                <img src="./images/hirehub-landing.png" class="project-image img-fluid w-100 mb-3" alt="AerLink Airline Booking App">
-                                
-                                <div class="card-body">
-                                    <h5 class="card-title">HireHub
-                                    </h5>
-<p class="card-text">
-  HireHub is a modern and intuitive job application platform where job seekers can easily find jobs, submit applications with resumes, verify their email for added security, and track their application status — all in one seamless experience.
-</p>
-
-
-                                    <div class="tech-stack">
-                                        <span>Figma</span>
-                                        <span>HTML</span>
-                                        <span>CSS</span>
-                                        <span>Bootstrap</span>
-                                        <span>React</span>
-                                        <span>Laravel</span>
-                                        <span>MySQL</span>
-                                    </div>
-                               <div class="icon-links d-flex justify-content-between">
-                                              <a href="https://hirehub-tawny.vercel.app/" target="_blank" class="ms-2">
-                                           Live Demo <i class="ri-external-link-line"></i>
-                                        </a>
-                                   <a href="https://github.com/gpnarisma03/HireHub" target="_blank" class="ms-2" title="View Code on GitHub">
-                                                <i class="ri-github-line"></i> Code
-                                        </a>
-                                    </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </section>
-            
-            
-                <section id="tools" data-aos="fade-up">
-                <h2 class="text-center mb-4 mt-5">TOOLS</h2>
-                <div class="container">
-                    <div class="row text-center">
-                    
-                    <!-- Frontend -->
-                    <div class="col-md-4 mt-4 mt-md-0">
-                        <h3 class="mb-3">Frontend</h3>
-                        <div class="d-flex justify-content-center flex-wrap gap-4 fs-1">
-                        <i class="devicon-html5-plain colored tools-tech-stack" title="HTML5"></i>
-                        <i class="devicon-css3-plain colored tools-tech-stack" title="CSS3"></i>
-                        <i class="devicon-bootstrap-plain colored tools-tech-stack" title="Bootstrap"></i>
-                        <i class="devicon-javascript-plain colored tools-tech-stack" title="JavaScript"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Backend (MERN) -->
-                    <div class="col-md-4 mt-5 mt-md-0">
-                        <h3 class="mb-3">MERN</h3>
-                        <div class="d-flex justify-content-center flex-wrap gap-4 fs-1">
-                        <i class="devicon-mongodb-plain colored tools-tech-stack" title="MongoDB"></i>
-                        <i class="devicon-express-original colored tools-tech-stack" title="Express.js"></i>
-                        <i class="devicon-react-original colored tools-tech-stack" title="React.js"></i>
-                        <i class="devicon-nodejs-plain colored tools-tech-stack" title="Node.js"></i>
-                        </div>
-                    </div>
-                    
-                    <!-- Other Tools -->
-                    <div class="col-md-4 mt-5 mt-md-0">
-                        <h3 class="mb-3">Other Tools</h3>
-                        <div class="d-flex justify-content-center flex-wrap gap-4 fs-1">
-                        <i class="devicon-sublime-text-plain colored tools-tech-stack" title="Sublime Text"></i>
-                        <i class="devicon-github-original colored tools-tech-stack" title="GitHub"></i>
-                        <i class="devicon-postman-plain colored tools-tech-stack" title="Postman"></i>
-                        <i class="devicon-vscode-plain colored tools-tech-stack" title="VS Code"></i>
-                        </div>
-                    </div>
-                    
-                    </div>
-                </div>
-                </section>
-
-            <section id="contact" data-aos="fade-up">
-                <h2 class="text-center mb-4 mt-5">CONTACT</h2>
-                <div class="container">
-                    <div class="row">
-                        <!-- Google Maps Embed -->
-                        <div class="col-lg-6 mb-2">
-                            <div class="ratio ratio-16x9">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.5153433818205!2d121.0544327751089!3d14.73997148576312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b06a06732f6b%3A0x4577ecfebbf0c23e!2sTalisayan%20St%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1741941927126!5m2!1sen!2sph"
-                                    width="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                                </iframe>
-                            </div>
-                        </div>
-            
-                        <!-- Contact Form -->
-                        <div class="col-lg-6 ">
-                            <form id="contactForm">
-                                <div class="mb-3">
-                                    <label for="fullname" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="fullname" name="fullname">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message" class="form-label">Message</label>
-                                    <textarea class="form-control" id="message" name="message" rows="5"></textarea>
-                                </div>
-                                <div class="d-grid">
-                                    <button type="submit" class="btn btn-primary btn-send-message">Send Message</button>
-                                </div>
-                                
-                            </form>
-                            <div id="formMessage" class="mt-3"></div>
-                            <!-- Social Media Links -->
-                            <div class="text-center mt-4 d-flex flex-wrap justify-content-center social">
-                                <a href="https://www.facebook.com/geralad.narisma/" target="_blank" class="me-3">
-                                    <i class='bx bxl-facebook bx-md' ></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/gerald-narisma-47041a216/" target="_blank" class="me-3">
-                                    <i class='bx bxl-linkedin-square bx-md'></i>
-                                </a>
-                                <a href="https://www.instagram.com/geraldnarisma/" target="_blank">
-                                    <i class='bx bxl-instagram bx-md' ></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-          </main>
-        <!-- Footer Section -->
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; 2025 <a href="#">Gerald Narisma</a> | All Rights Reserved</p>
+            <div
+              class="col-12 col-md-6 order-md-2 order-1 text-center"
+              data-aos="fade-left"
+            >
+              <img
+                src="images/pogie.jpg"
+                class="rounded-circle img-fluid"
+                id="landing-img"
+                alt="Gerald Narisma"
+                width="400"
+              />
             </div>
-        </footer>
-            <!-- Bootstrap JS -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
-            <!-- External JS -->
-            <script src="index.js"></script>
-            <!-- AOS Library JS -->
-            <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-            <script>
-            AOS.init({
-                duration: 2000,
-                once: true 
-            });
-            </script>
-        </body>
+          </div>
+        </div>
+      </section>
+      <section id="projects" data-aos="fade-down">
+        <div class="container mt-5">
+          <h2 class="text-center">PROJECTS</h2>
+          <div class="row my-5">
+            <!-- JavaScript will render projects here -->
+          </div>
+        </div>
+      </section>
+
+      <section id="tools" data-aos="fade-up">
+        <!-- JavaScript will render tools here -->
+      </section>
+
+      <section id="contact" data-aos="fade-up">
+        <h2 class="text-center mb-4 mt-5">CONTACT</h2>
+        <div class="container">
+          <div class="row">
+            <!-- Google Maps Embed -->
+            <div class="col-lg-6 mb-2">
+              <div class="ratio ratio-16x9">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.5153433818205!2d121.0544327751089!3d14.73997148576312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b06a06732f6b%3A0x4577ecfebbf0c23e!2sTalisayan%20St%2C%20Quezon%20City%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1741941927126!5m2!1sen!2sph"
+                  width="100%"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-lg-6">
+              <form id="contactForm">
+                <div class="mb-3">
+                  <label for="fullname" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullname"
+                    name="fullname"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    name="message"
+                    rows="5"
+                  ></textarea>
+                </div>
+                <div class="d-grid">
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-send-message"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+              <div id="formMessage" class="mt-3"></div>
+              <!-- Social Media Links -->
+              <div
+                class="text-center mt-4 d-flex flex-wrap justify-content-center social"
+              >
+                <a
+                  href="https://www.facebook.com/geralad.narisma/"
+                  target="_blank"
+                  class="me-3"
+                >
+                  <i class="bx bxl-facebook bx-md"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/gerald-narisma-47041a216/"
+                  target="_blank"
+                  class="me-3"
+                >
+                  <i class="bx bxl-linkedin-square bx-md"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/geraldnarisma/"
+                  target="_blank"
+                >
+                  <i class="bx bxl-instagram bx-md"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 <a href="#">Gerald Narisma</a> | All Rights Reserved</p>
+      </div>
+    </footer>
+    <!-- Mobile Bottom Navigation -->
+    <nav
+      class="mobile-nav-bar d-block d-lg-none fixed-bottom custom-navbar shadow-sm border-top"
+    >
+      <ul
+        class="d-flex justify-content-around align-items-center list-unstyled mb-0 py-2"
+      >
+        <li>
+          <a
+            href="#landing"
+            class="nav-link d-flex flex-column align-items-center"
+          >
+            <i class="ri-home-line fs-5"></i>
+            <small>HOME</small>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="nav-link d-flex flex-column align-items-center"
+          >
+            <i class="ri-folders-line fs-5"></i>
+            <small>MY PROJECTS</small>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#tools"
+            class="nav-link d-flex flex-column align-items-center"
+          >
+            <i class="ri-tools-line fs-5"></i>
+            <small>TOOLS</small>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="nav-link d-flex flex-column align-items-center"
+          >
+            <i class="ri-contacts-line fs-5"></i>
+            <small>CONTACT</small>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- External JS -->
+    <script src="index.js"></script>
+    <!-- AOS Library JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 2000,
+        once: true,
+      });
+    </script>
+  </body>
 </html>
