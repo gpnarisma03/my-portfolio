@@ -45,8 +45,9 @@ document
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
     const formMessage = document.getElementById("formMessage");
+    const sendBtn = document.getElementById("sendBtn");
 
-    // Clear all inline errors and status messages
+    // Reset error messages
     document.getElementById("error-fullname").innerText = "";
     document.getElementById("error-email").innerText = "";
     document.getElementById("error-message").innerText = "";
@@ -81,10 +82,17 @@ document
 
     if (hasError) return;
 
-    try {
-      formMessage.innerHTML =
-        '<div class="loader-container">Sending <div class="loader"></div></div>';
+    // ✅ Show your existing .loader inside the button
+    sendBtn.disabled = true;
+    sendBtn.innerHTML = `
+      <div class="loader-container"">
+        <div class="sending-text">Sending</div>
+        <div class="loader"">
+        </div>
+      </div>
+    `;
 
+    try {
       const response = await fetch(
         "https://portfolioapi-r33f.onrender.com/message",
         {
@@ -98,16 +106,19 @@ document
 
       const result = await response.json();
 
+      // ✅ Restore button
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Send Message";
+
       if (response.ok) {
         formMessage.innerHTML = `
-        <div class="alert alert-success text-center" id="successMsg">
-          Message sent! I will get back to you as soon as possible.
-        </div>
-      `;
+          <div class="alert alert-success text-center" id="successMsg">
+            Message sent! I will get back to you as soon as possible.
+          </div>
+        `;
 
         document.getElementById("contactForm").reset();
 
-        // Hide the message after 5 seconds (3000 ms)
         setTimeout(() => {
           const successMsg = document.getElementById("successMsg");
           if (successMsg) {
@@ -118,6 +129,8 @@ document
         formMessage.innerHTML = `<div class="alert alert-danger text-center">${result.message}</div>`;
       }
     } catch (error) {
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Send Message";
       formMessage.innerHTML = `<div class="alert alert-danger text-center">Something went wrong. Please try again later.</div>`;
       console.error("Error:", error);
     }

@@ -255,7 +255,7 @@ body {
 .loader {
   width: 32px; /* You can adjust this for overall size */
   aspect-ratio: 4; /* Maintains width:height ratio (e.g., 80 / 4 = 20px height) */
-  background: radial-gradient(circle, var(--primary) 0% 30%, #0000 30.01%) 0 /
+  background: radial-gradient(circle, #fff 0% 30%, #0000 30.01%) 0 /
     calc(100% / 3) 100% space;
   clip-path: inset(0 100% 0 0);
   animation: l1 1s steps(4) infinite;
@@ -269,10 +269,10 @@ body {
 
 .loader-container {
   display: flex;
-
+  justify-content: center;
   gap: 10px;
   font-size: 16px;
-  color: var(--primary);
+  color: white;
 }
 
 #contactForm input,
@@ -290,15 +290,40 @@ body {
   color: rgb(209, 97, 97);
 }
 
+/* Base styles */
 .btn-send-message {
   background-color: var(--primary);
   color: var(--background-color);
+  transition: all 0.3s ease;
+  border: none;
+  padding: 5px 10px;
 }
 
-.btn-send-message:hover {
+/* Hover styles */
+.btn-send-message:hover:not([disabled]) {
   background-color: var(--background-color);
   color: var(--secondary);
   border: 2px solid var(--primary);
+}
+
+/* While sending — deeply override Bootstrap */
+#contactForm .btn-send-message.sending {
+  background-color: var(--primary) !important;
+  color: var(--background-color) !important;
+  border-color: var(--primary) !important;
+  box-shadow: none !important;
+  cursor: wait !important;
+  padding: 5px 10px !important;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Prevent hover from changing colors while sending */
+#contactForm .btn-send-message.sending:hover {
+  background-color: var(--primary) !important;
+  color: var(--background-color) !important;
+  border-color: var(--primary) !important;
 }
 .social img {
   width: 30px;
