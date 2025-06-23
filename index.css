@@ -251,6 +251,35 @@ body {
 }
 
 /* Contact */
+
+:root {
+  --primary: #0369a1;
+}
+
+.loader {
+  width: 32px; /* You can adjust this for overall size */
+  aspect-ratio: 4; /* Maintains width:height ratio (e.g., 80 / 4 = 20px height) */
+  background: radial-gradient(circle closest-side, var(--primary) 90%, #0000) 0 /
+    calc(100% / 3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+}
+
+@keyframes l1 {
+  to {
+    clip-path: inset(0 -34% 0 0);
+  }
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: var(--primary);
+}
+
 #contactForm input,
 #message {
   outline: none;
