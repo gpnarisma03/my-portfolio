@@ -46,41 +46,43 @@ document
     const message = document.getElementById("message").value.trim();
     const formMessage = document.getElementById("formMessage");
 
-    // Clear previous messages
+    // Clear all inline errors and status messages
+    document.getElementById("error-fullname").innerText = "";
+    document.getElementById("error-email").innerText = "";
+    document.getElementById("error-message").innerText = "";
     formMessage.innerHTML = "";
 
-    // Frontend validation
-    const nameRegex = /^[A-Za-z\s]+$/; // only letters and spaces
+    const nameRegex = /^[A-Za-z\s]+$/;
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-    if (!fullname) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Full Name is required.</div>`;
-      return;
-    }
+    let hasError = false;
 
-    if (!nameRegex.test(fullname)) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Full Name must contain only letters and spaces.</div>`;
-      return;
+    if (!fullname) {
+      document.getElementById("error-fullname").innerText = "Required";
+      hasError = true;
+    } else if (!nameRegex.test(fullname)) {
+      document.getElementById("error-fullname").innerText =
+        "Only letters and spaces";
+      hasError = true;
     }
 
     if (!email) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Email is required.</div>`;
-      return;
-    }
-
-    if (!emailRegex.test(email)) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Please provide a valid email address.</div>`;
-      return;
+      document.getElementById("error-email").innerText = "Required";
+      hasError = true;
+    } else if (!emailRegex.test(email)) {
+      document.getElementById("error-email").innerText = "Invalid email format";
+      hasError = true;
     }
 
     if (!message) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Message cannot be empty.</div>`;
-      return;
+      document.getElementById("error-message").innerText = "Required";
+      hasError = true;
     }
 
-    // Send data to API
+    if (hasError) return;
+
     try {
-      formMessage.innerHTML = '<div class="text-center">Sending... </div>';
+      formMessage.innerHTML = '<div class="text-center">Sending...</div>';
 
       const response = await fetch(
         "https://portfolioapi-r33f.onrender.com/message",

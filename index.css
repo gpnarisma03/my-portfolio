@@ -251,9 +251,19 @@ body {
 }
 
 /* Contact */
+#contactForm input,
+#message {
+  outline: none;
+  box-shadow: none;
+}
 .form-label {
   color: var(--primary);
   font-weight: 500;
+}
+
+#contactForm .text-dangers {
+  font-weight: 400;
+  color: rgb(209, 97, 97);
 }
 
 .btn-send-message {
