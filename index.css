@@ -251,26 +251,38 @@ body {
 }
 
 /* Contact */
-
-.loader {
-  width: 32px; /* You can adjust this for overall size */
-  aspect-ratio: 4; /* Maintains width:height ratio (e.g., 80 / 4 = 20px height) */
-  background: radial-gradient(circle, #fff 0% 30%, #0000 30.01%) 0 /
-    calc(100% / 3) 100% space;
-  clip-path: inset(0 100% 0 0);
-  animation: l1 1s steps(4) infinite;
+.lds-dual-ring,
+.lds-dual-ring:after {
+  box-sizing: border-box;
 }
-
-@keyframes l1 {
-  to {
-    clip-path: inset(0 -34% 0 0);
+.lds-dual-ring {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
 .loader-container {
   display: flex;
   justify-content: center;
-  gap: 10px;
   font-size: 16px;
   color: white;
 }

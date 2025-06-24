@@ -87,22 +87,30 @@ document
     sendBtn.innerHTML = `
       <div class="loader-container"">
         <div class="sending-text">Sending</div>
-        <div class="loader"">
+        <div class="lds-dual-ring"">
         </div>
       </div>
     `;
 
+    // Helper: Timeout function
+    function timeoutPromise(ms) {
+      return new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("Request timed out")), ms)
+      );
+    }
+
     try {
-      const response = await fetch(
-        "https://portfolioapi-r33f.onrender.com/message",
-        {
+      // Run fetch and timeout in parallel
+      const response = await Promise.race([
+        fetch("https://portfolioapi-r33f.onrender.com/message", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ fullname, email, message }),
-        }
-      );
+        }),
+        timeoutPromise(10000), // 10 seconds
+      ]);
 
       const result = await response.json();
 
@@ -112,11 +120,10 @@ document
 
       if (response.ok) {
         formMessage.innerHTML = `
-          <div class="alert alert-success text-center" id="successMsg">
-            Message sent! I will get back to you as soon as possible.
-          </div>
-        `;
-
+      <div class="alert alert-success text-center" id="successMsg">
+        Message sent! I will get back to you as soon as possible.
+      </div>
+    `;
         document.getElementById("contactForm").reset();
 
         setTimeout(() => {
@@ -129,9 +136,16 @@ document
         formMessage.innerHTML = `<div class="alert alert-danger text-center">${result.message}</div>`;
       }
     } catch (error) {
+      // Restore button
       sendBtn.disabled = false;
       sendBtn.textContent = "Send Message";
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Something went wrong. Please try again later.</div>`;
+
+      let errorMsg = "Something went wrong. Please try again later.";
+      if (error.message === "Request timed out") {
+        errorMsg = "Request timed out. Please try again.";
+      }
+
+      formMessage.innerHTML = `<div class="alert alert-danger text-center">${errorMsg}</div>`;
       console.error("Error:", error);
     }
   });
