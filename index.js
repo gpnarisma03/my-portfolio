@@ -45,64 +45,107 @@ document
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
     const formMessage = document.getElementById("formMessage");
+    const sendBtn = document.getElementById("sendBtn");
 
-    // Clear previous messages
+    // Reset error messages
+    document.getElementById("error-fullname").innerText = "";
+    document.getElementById("error-email").innerText = "";
+    document.getElementById("error-message").innerText = "";
     formMessage.innerHTML = "";
 
-    // Frontend validation
-    const nameRegex = /^[A-Za-z\s]+$/; // only letters and spaces
+    const nameRegex = /^[A-Za-z\s]+$/;
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-    if (!fullname) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Full Name is required.</div>`;
-      return;
-    }
+    let hasError = false;
 
-    if (!nameRegex.test(fullname)) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Full Name must contain only letters and spaces.</div>`;
-      return;
+    if (!fullname) {
+      document.getElementById("error-fullname").innerText = "Required";
+      hasError = true;
+    } else if (!nameRegex.test(fullname)) {
+      document.getElementById("error-fullname").innerText =
+        "Only letters and spaces";
+      hasError = true;
     }
 
     if (!email) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Email is required.</div>`;
-      return;
-    }
-
-    if (!emailRegex.test(email)) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Please provide a valid email address.</div>`;
-      return;
+      document.getElementById("error-email").innerText = "Required";
+      hasError = true;
+    } else if (!emailRegex.test(email)) {
+      document.getElementById("error-email").innerText = "Invalid email format";
+      hasError = true;
     }
 
     if (!message) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Message cannot be empty.</div>`;
-      return;
+      document.getElementById("error-message").innerText = "Required";
+      hasError = true;
     }
 
-    // Send data to API
-    try {
-      formMessage.innerHTML = '<div class="text-center">Sending... </div>';
+    if (hasError) return;
 
-      const response = await fetch(
-        "https://portfolioapi-r33f.onrender.com/message",
-        {
+    // ✅ Show your existing .loader inside the button
+    sendBtn.disabled = true;
+    sendBtn.innerHTML = `
+      <div class="loader-container"">
+        <div class="sending-text">Sending</div>
+        <div class="lds-dual-ring"">
+        </div>
+      </div>
+    `;
+
+    // Helper: Timeout function
+    function timeoutPromise(ms) {
+      return new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("Request timed out")), ms)
+      );
+    }
+
+    try {
+      // Run fetch and timeout in parallel
+      const response = await Promise.race([
+        fetch("https://portfolioapi-r33f.onrender.com/message", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ fullname, email, message }),
-        }
-      );
+        }),
+        timeoutPromise(10000), // 10 seconds
+      ]);
 
       const result = await response.json();
 
+      // ✅ Restore button
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Send Message";
+
       if (response.ok) {
-        formMessage.innerHTML = `<div class="alert alert-success text-center">Message sent! I will get back to you as soon as possible.</div>`;
+        formMessage.innerHTML = `
+      <div class="alert alert-success text-center" id="successMsg">
+        Message sent! I will get back to you as soon as possible.
+      </div>
+    `;
         document.getElementById("contactForm").reset();
+
+        setTimeout(() => {
+          const successMsg = document.getElementById("successMsg");
+          if (successMsg) {
+            successMsg.remove();
+          }
+        }, 3000);
       } else {
         formMessage.innerHTML = `<div class="alert alert-danger text-center">${result.message}</div>`;
       }
     } catch (error) {
-      formMessage.innerHTML = `<div class="alert alert-danger text-center">Something went wrong. Please try again later.</div>`;
+      // Restore button
+      sendBtn.disabled = false;
+      sendBtn.textContent = "Send Message";
+
+      let errorMsg = "Something went wrong. Please try again later.";
+      if (error.message === "Request timed out") {
+        errorMsg = "Request timed out. Please try again.";
+      }
+
+      formMessage.innerHTML = `<div class="alert alert-danger text-center">${errorMsg}</div>`;
       console.error("Error:", error);
     }
   });

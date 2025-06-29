@@ -156,7 +156,13 @@
             <div class="col-lg-6">
               <form id="contactForm">
                 <div class="mb-3">
-                  <label for="fullname" class="form-label">Full Name</label>
+                  <label for="fullname" class="form-label">
+                    Full Name
+                    <span
+                      class="text-dangers small ms-2"
+                      id="error-fullname"
+                    ></span>
+                  </label>
                   <input
                     type="text"
                     class="form-control"
@@ -164,8 +170,15 @@
                     name="fullname"
                   />
                 </div>
+
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
+                  <label for="email" class="form-label">
+                    Email
+                    <span
+                      class="text-dangers small ms-2"
+                      id="error-email"
+                    ></span>
+                  </label>
                   <input
                     type="email"
                     class="form-control"
@@ -173,8 +186,16 @@
                     name="email"
                   />
                 </div>
+
                 <div class="mb-3">
-                  <label for="message" class="form-label">Message</label>
+                  <label for="message" class="form-label">
+                    Message
+                    <span
+                      class="text-dangers small ms-2"
+                      id="error-message"
+                    ></span>
+                  </label>
+
                   <textarea
                     class="form-control"
                     id="message"
@@ -182,16 +203,16 @@
                     rows="5"
                   ></textarea>
                 </div>
+
                 <div class="d-grid">
-                  <button
-                    type="submit"
-                    class="btn btn-primary btn-send-message"
-                  >
+                  <button id="sendBtn" type="submit" class="btn-send-message">
                     Send Message
                   </button>
                 </div>
+
+                <div id="formMessage" class="mt-3"></div>
               </form>
-              <div id="formMessage" class="mt-3"></div>
+
               <!-- Social Media Links -->
               <div
                 class="text-center mt-4 d-flex flex-wrap justify-content-center social"

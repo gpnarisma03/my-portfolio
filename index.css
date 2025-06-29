@@ -251,20 +251,91 @@ body {
 }
 
 /* Contact */
+.lds-dual-ring,
+.lds-dual-ring:after {
+  box-sizing: border-box;
+}
+.lds-dual-ring {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 5px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  border-color: currentColor transparent currentColor transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+}
+
+#contactForm input,
+#message {
+  outline: none;
+  box-shadow: none;
+}
 .form-label {
   color: var(--primary);
   font-weight: 500;
 }
 
+#contactForm .text-dangers {
+  font-weight: 400;
+  color: rgb(209, 97, 97);
+}
+
+/* Base styles */
 .btn-send-message {
   background-color: var(--primary);
   color: var(--background-color);
+  transition: all 0.3s ease;
+  border: none;
+  padding: 5px 10px;
 }
 
-.btn-send-message:hover {
+/* Hover styles */
+.btn-send-message:hover:not([disabled]) {
   background-color: var(--background-color);
   color: var(--secondary);
   border: 2px solid var(--primary);
+}
+
+/* While sending — deeply override Bootstrap */
+#contactForm .btn-send-message.sending {
+  background-color: var(--primary) !important;
+  color: var(--background-color) !important;
+  border-color: var(--primary) !important;
+  box-shadow: none !important;
+  cursor: wait !important;
+  padding: 5px 10px !important;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Prevent hover from changing colors while sending */
+#contactForm .btn-send-message.sending:hover {
+  background-color: var(--primary) !important;
+  color: var(--background-color) !important;
+  border-color: var(--primary) !important;
 }
 .social img {
   width: 30px;
