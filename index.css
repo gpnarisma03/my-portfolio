@@ -78,13 +78,13 @@ body {
 }
 
 #description {
-  color: var(--text-color); /* Keeps it consistent with your theme */
-  font-size: 1rem; /* Standard size for body text */
-  line-height: 1.75; /* More breathing room for readability */
-  letter-spacing: 0.5px; /* Subtle spacing, easier on the eyes */
-  text-align: left; /* Keep it aligned for better scanning */
-  max-width: 700px; /* Limit line length for readability */
-  margin: 0 auto; /* Center it horizontally */
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: 0.5px;
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 #landing-img {
@@ -164,10 +164,10 @@ body {
   font-size: 14px;
 }
 .card-text .colored {
-  font-size: 22px; /* Icon size */
-  vertical-align: middle; /* Align icons vertically with text */
-  margin-right: 8px; /* Space between icons */
-  color: #3178c6; /* Optional: adjust color to match your theme */
+  font-size: 22px;
+  vertical-align: middle;
+  margin-right: 8px;
+  color: #3178c6;
 }
 
 .card-title a {
